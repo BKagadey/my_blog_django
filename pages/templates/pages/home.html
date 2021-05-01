@@ -1,0 +1,39 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}MyBlog{% endblock title %}
+{% block content %}
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h2>Hello world!</h2>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Mail me</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+
+                {% for page in pages %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ page.page_image.url }}" alt="">
+
+                        <div class="card-body">
+                            <p class="card-text">{{ page.page_text }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock content %}

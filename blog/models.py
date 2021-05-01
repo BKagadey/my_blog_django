@@ -7,3 +7,6 @@ class Post(models.Model):
     date = models.DateTimeField()
     text = models.TextField()
     image = models.ImageField(upload_to='page_images/')
+    
+    def __str__(self):
+        return self.title
